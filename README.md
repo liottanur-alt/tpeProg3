@@ -10,7 +10,9 @@ Servicios (Parte 1):
               cortando la ejecución apenas se supera la urgencia máxima.    
 
 Algoritmos (Parte 2):
-- Greedy: Implementamos una estrategia donde ordenamos por peso y buscamos el camión que quede más justo. Primero ordenamos los paquetes por peso (de mayor a menor).
+- Greedy: Para esta estrategia nos dimos cuenta de que si solo ordenábamos por peso, los paquetes comunes le robaban el lugar a los alimentos en el camión refrigerado.
+          Por eso, decidimos ordenar los datos en dos pasos: primero pusimos todos los paquetes que necesitan  frío al principio de la lista, y recién después ordenamos
+          por peso (del más pesado al más liviano). 
           Luego, cada paquete se ubica en el camión disponible que quede con la menor capacidad restante. 
           Esta nos asegura que los paquetes más pesados entren primero, y minimiza el espacio desperdiciado en cada camión.     
 
