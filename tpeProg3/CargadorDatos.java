@@ -11,7 +11,7 @@ public class CargadorDatos {
     public static List<Camion> cargarCamiones(String archivo) throws IOException {
         List<Camion> camiones = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-            String linea = br.readLine(); // primera línea = cantidad de registros, se ignora
+            String linea; 
             while ((linea = br.readLine()) != null) {
                 if (linea.trim().isEmpty()) continue;
                 String[] campos = linea.split(";");
@@ -28,7 +28,7 @@ public class CargadorDatos {
     public static List<Paquete> cargarPaquetes(String archivo) throws IOException {
         List<Paquete> paquetes = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-            String linea = br.readLine(); // primera línea = cantidad de registros, se ignora
+            String linea;
             while ((linea = br.readLine()) != null) {
                 if (linea.trim().isEmpty()) continue;
                 String[] campos = linea.split(";");
@@ -42,5 +42,4 @@ public class CargadorDatos {
         }
         return paquetes;
     }
-
 }

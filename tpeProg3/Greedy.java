@@ -18,7 +18,11 @@ public class Greedy {
         int candidatosConsiderados = 0;
 
         List<Paquete> ordenados = new ArrayList<>(paquetes);
-        ordenados.sort(new ComparadorPorPeso());
+        ordenados.sort((p1, p2) -> {
+            if (p1.getContieneAlimentos() && !p2.getContieneAlimentos()) return -1;
+            if (!p1.getContieneAlimentos() && p2.getContieneAlimentos()) return 1;
+            return Integer.compare(p2.getPeso(), p1.getPeso());
+        });
 
         int[] capacidadRestante = new int[camiones.size()];
         for (int i = 0; i < camiones.size(); i++) {

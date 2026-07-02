@@ -17,19 +17,19 @@ public class Main {
         Servicios servicios = new Servicios(pathCamiones, pathPaquetes);
 
         // Prueba Servicio 1
-        System.out.println("> Servicio 1 (Buscar paquete P001):");
-        System.out.println("  " + servicios.servicio1("P001"));
+        System.out.println("> Servicio 1 (Buscar paquete por codigo):");
+        System.out.println("  " + servicios.servicio1("PKG001"));
 
         // Prueba Servicio 2
         System.out.println("> Servicio 2 (Paquetes con alimentos):");
         System.out.println("  Cantidad encontrada: " + servicios.servicio2(true).size());
 
         // Prueba Servicio 3
-        System.out.println("> Servicio 3 (Urgencia entre 50 y 100):");
+        System.out.println("> Servicio 3 (Urgencia entre minimo y maximo):");
         System.out.println("  Cantidad encontrada: " + servicios.servicio3(50, 100).size());
 
 
-        // --- ALGORITMOS ---
+        // --- ALGORITMOS --- (utilizamos el caso de Test 1)
         System.out.println("\n=================================================");
         System.out.println("--- SEGUNDA PARTE: Algoritmos ---");
         
@@ -38,7 +38,7 @@ public class Main {
 
         Greedy greedyAlg = new Greedy();
         Solucion solGreedy = greedyAlg.greedy(camiones, paquetes);
-        
+        System.out.println("-------------------------");
         System.out.println(" - Backtracking");
 
         Backtracking backAlg = new Backtracking();
@@ -46,7 +46,7 @@ public class Main {
         
         imprimirSolucion(solBack);
         System.out.println("Métrica para analizar el costo (estados generados): " + solBack.getEstadosGenerados());
-
+        System.out.println("-------------------------");
         System.out.println("- Greedy");
         imprimirSolucion(solGreedy);
         System.out.println("Métrica para analizar el costo (candidatos considerados): " + solGreedy.getCandidatosConsiderados());
